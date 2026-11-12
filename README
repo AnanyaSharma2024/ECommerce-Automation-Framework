@@ -1,0 +1,91 @@
+Folder	Responsibility
+base	Browser setup and teardown (BaseTest)
+pages	Website pages and their actions (LoginPage, HomePage)
+utils	Reusable helper methods, configuration, screenshots etc.
+
+BaseTest → Browser open/close karega.
+LoginPage → Login ke actions perform karega.
+LoginTest → Test execute aur verify karega.
+
+Abhi tak humne achieve kiya:
+1. Maven + Selenium + JUnit 5 setup.
+2. BaseTest – Browser setup and teardown.
+3. LoginPage – Page Object Model.
+4. LoginTest – Successful login verification.
+5. Inheritance, encapsulation, constructor and abstraction ka practical use.
+
+Negative Login Testing
+Ab hum check karenge ki website invalid credentials par expected error show karti hai ya nahi.
+
+Test case	                Username	    Password	        Expected result
+Valid login	                standard_user	secret_sauce	    Login successful
+Invalid password	        standard_user	wrong123	        Error message
+Invalid username	        wrong_user	    secret_sauce	    Error message
+Empty credentials	        Empty	        Empty	            Error message
+
+Pehle ek improvement karenge: LoginPage.java mein error message ka locator aur usko retrieve karne ka method add karenge.
+
+Test	                Expected
+FirstSeleniumTest	    PASS
+validLoginTest	        PASS
+invalidPasswordTest	    PASS
+
+
+Data-driven testing using JUnit 5
+Abhi agar humein 5 different credentials test karne hain, toh 5 separate test methods likhne pad sakte hain.
+
+Parameterized testing mein ek hi test method ko multiple input values ke saath execute kar sakte hain.
+
+Expected results
+Test	Executions
+FirstSeleniumTest	1
+validLoginTest	1
+invalidCredentialsTest	3
+Total	5
+
+What you've learned so far
+- Selenium WebDriver and browser automation
+- JUnit 5 lifecycle: @BeforeEach, @AfterEach
+- Page Object Model (POM)
+- OOP: inheritance, encapsulation, constructors, abstraction
+- Assertions: assertTrue() and assertEquals()
+- Parameterized testing using @CsvSource
+
+Product Page AutomationWe'll implement:
+1. Verify Products page is displayed.
+2. Get product names and prices.
+3. Sort products by price.
+4. Add products to cart.
+5. Verify cart count.
+
+Samjho execution ka flow
+BaseTest
+Browser launch + SauceDemo open
+
+LoginPage
+Username + Password + Login
+
+InventoryPage
+Get page title
+
+JUnit Assertion
+Expected: Products
+Actual: Products
+
+Page Object Model – POM
+POM ka simple meaning hai:
+
+Har webpage ki information aur us webpage par perform hone wale actions ko ek separate class mein rakhna.
+
+For example:
+Class	Responsibility
+BaseTest	Browser manage karna
+LoginPage	Login page ke elements/actions
+InventoryPage	Products page ke elements/actions
+InventoryTest	Products page test karna
+LoginTest	Login functionality test karna
+
+Remember this simple rule
+- BaseTest = Browser kaun manage karega?
+- Page classes = Website par kaam kaise hoga?
+- Test classes = Kya verify karna hai?
