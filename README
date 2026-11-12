@@ -89,3 +89,26 @@ Remember this simple rule
 - BaseTest = Browser kaun manage karega?
 - Page classes = Website par kaam kaise hoga?
 - Test classes = Kya verify karna hai?
+
+Extract product names and prices
+findElement() vs findElements()
+Method	        Purpose	                            Returntype
+findElement()	Ek element find karta hai	        WebElement
+findElements()	Multiple elements find karta hai	List of WebElement
+
+Product Sorting Automation
+- Name (A to Z)
+- Name (Z to A)
+- Price (low to high)
+- Price (high to low)
+Hum pehle Price (low to high) test karenge.
+1. Update InventoryPage.java
+
+HTML dropdown ko handle karne ke liye Selenium ki Select class use hoti hai. Ye dropdown element ko Select object mein convert karta hai.
+select.selectByValue("lohi"); Ye Price (low to high) option select karta hai.
+
+e-commerce functionality automate karenge:
+Backpack ko cart mein add karna.
+Cart badge mein count verify karna.
+Cart page open karna.
+Product name aur price verify karna.
