@@ -145,3 +145,65 @@ Done
 - Parameterized testing with @CsvSource
 - Inventory page, product names/prices and sorting
 - Add to cart, cart verification and remove product
+
+CheckoutPage ki responsibility kya hogi?
+- Customer ka First Name enter karna.
+- Last Name enter karna.
+- Postal Code enter karna.
+- Continue button click karna.
+- Finish button click karna.
+- Order confirmation message retrieve karna.
+
+Is test mein hum complete flow execute karenge:
+1. SauceDemo login.
+2. Backpack cart mein add.
+3. Cart open.
+4. Checkout click.
+5. Customer details enter.
+6. Continue → Finish.
+7. Order confirmation verify.
+
+Phase 2 ke next improvements:
+1. Checkout Overview page verification.
+2. Product subtotal and total price verification.
+3. Explicit Waits throughout the framework.
+4. Checkout test execution and cleanup.
+
+Selenium Interview Questions & Answers
+1. What is Selenium WebDriver?
+
+Selenium WebDriver is an open-source tool used to automate web browsers. It helps us perform actions like clicking buttons, entering text, and testing web applications automatically.
+
+2. Why did you use Maven with Selenium?
+
+Maven is used to manage project dependencies, build the project, and execute test cases, whereas Selenium is used for browser automation.
+
+3. What is Page Object Model (POM)?
+
+Page Object Model is a design pattern in which we create separate classes for different web pages. It improves code reusability, readability, and maintainability.
+
+4. Where did you use inheritance in your project?
+
+I used inheritance by extending BaseTest in my test classes. It allows them to reuse common browser setup and teardown methods without writing the same code repeatedly.
+
+5. What is the difference between findElement() and findElements()?
+- findElement() returns the first matching web element and throws an exception if no element is found.
+- findElements() returns a list of all matching elements and returns an empty list if none are found.
+6. What do @BeforeEach and @AfterEach do?
+
+@BeforeEach runs before every test case and is used to initialize the browser. @AfterEach runs after every test case and is used to close the browser.
+
+7. What is Parameterized Testing?
+
+Parameterized testing allows us to execute the same test case multiple times with different sets of input data. I used JUnit 5's @ParameterizedTest and @CsvSource for testing different login credentials.
+
+8. What is the difference between Explicit Wait and Implicit Wait?
+- Implicit Wait: Applies a common waiting time while searching for elements throughout the driver session.
+- Explicit Wait: Waits for a specific condition, such as an element becoming clickable or visible.
+9. Why does StaleElementReferenceException occur?
+
+It occurs when an element that was previously located is no longer attached to the current DOM. This can happen when a page refreshes or its elements are updated.
+
+10. What is the purpose of Assertions?
+
+Assertions are used to verify whether the actual result matches the expected result. They help determine whether a test case has passed or failed.
