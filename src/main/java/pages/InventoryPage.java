@@ -15,6 +15,9 @@ public class InventoryPage {
     private By productNames = By.className("inventory_item_name");
     private By productPrices = By.className("inventory_item_price");
     private By sortDropdown = By.className("product_sort_container");
+    private By backpackAddToCartButton = By.id("add-to-cart-sauce-labs-backpack");
+    private By cartBadge = By.className("shopping_cart_badge");
+    private By cartIcon = By.className("shopping_cart_link");
 
     // Constructor
     public InventoryPage(WebDriver driver) {
@@ -69,5 +72,17 @@ public class InventoryPage {
         Select select = new Select(dropdown);
 
         select.selectByValue("hilo");
+    }
+
+    public void addBackpackToCart() {
+        driver.findElement(backpackAddToCartButton).click();
+    }
+
+    public String getCartCount() {
+        return driver.findElement(cartBadge).getText();
+    }
+
+    public void openCart() {
+        driver.findElement(cartIcon).click();
     }
 }

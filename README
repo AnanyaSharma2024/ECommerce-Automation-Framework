@@ -112,3 +112,36 @@ Backpack ko cart mein add karna.
 Cart badge mein count verify karna.
 Cart page open karna.
 Product name aur price verify karna.
+
+Abhi tak humne verify kiya ki cart badge ka count 1 ho gaya. Lekin kya actual product cart mein add hua hai? Ye bhi verify karna zaroori hai. therefore create cart.page
+
+Abhi ye 2 changes samjho
+- InventoryPage knows how to open the cart.
+- CartPage knows how to retrieve products inside the cart.
+
+Why did you create a separate CartPage class
+?
+
+You can answer:
+
+"I used the Page Object Model to maintain separate classes for different application pages. CartPage encapsulates cart-related locators and actions, making the framework reusable and easier to maintain."
+
+Remove product from cart
+driver.findElements(locator).isEmpty()
+
+
+Why?
+- findElement() element nahi milne par exception throw karta hai.
+- findElements() element nahi milne par empty list return karta hai.
+- isEmpty() check karta hai ki list empty hai ya nahi.
+Yahan hum verify kar rahe hain ki product remove hone ke baad cart mein koi item nahi hai.
+
+Phase 1 – Completed
+Done
+
+- Maven, Selenium, JUnit 5 setup
+- BaseTest and Page Object Model
+- Login and negative login tests
+- Parameterized testing with @CsvSource
+- Inventory page, product names/prices and sorting
+- Add to cart, cart verification and remove product

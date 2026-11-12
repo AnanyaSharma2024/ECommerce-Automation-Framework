@@ -96,4 +96,20 @@ public class InventoryTest extends BaseTest {
             Assertions.assertTrue(currentPrice >= nextPrice);
         }
     }
+
+    @Test
+    public void verifyAddToCart() {
+
+        LoginPage loginPage = new LoginPage(driver);
+
+        loginPage.login("standard_user", "secret_sauce");
+
+        InventoryPage inventoryPage = new InventoryPage(driver);
+
+        inventoryPage.addBackpackToCart();
+
+        String actualCount = inventoryPage.getCartCount();
+
+        Assertions.assertEquals("1", actualCount);
+    }
 }
